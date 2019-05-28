@@ -1,4 +1,4 @@
-# Sticky Dos
+# The Happy Wag
 
 ## Abstract:
 
