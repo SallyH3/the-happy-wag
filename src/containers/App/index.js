@@ -3,6 +3,7 @@ import './_App.scss';
 import { apiKey } from '../../utils/apikey.js';
 import Header from '../../components/Header/index.js';
 import { connect } from 'react-redux';
+import { Route } from 'react-router-dom';
 
 export default class App extends Component {
   constructor() {
@@ -12,17 +13,16 @@ export default class App extends Component {
     }
   }
 
-  componentDidMount = () => {
-    const url = `https://api.petfinder.com/v2/animals/api_key=${apiKey}&language=en-US&page=1`
-    //having issues with a CORS error - this mode below doesnt seem to help anything. Tried using mode: 'cors' and still wont work. Added chrome extension to try and bypass issues, but, still wont resolve and response is giving me back none of the data I am looking for.
-    fetch(url, {mode: 'no-cors'})
-    .then(response => console.log('response', response))
-  }
+  // componentDidMount = () => {
+  //   const url = `https://api.petfinder.com/v2/animals/api_key=${apiKey}&language=en-US&page=1`
+  //   fetch(url)
+  //   .then(response => console.log('response', response))
+  // }
 
   render() {
     return (
       <section className='App'>
-        <Header />
+        <Route exact path='/' component= { Header  } />  
       </section>
     )
   }
