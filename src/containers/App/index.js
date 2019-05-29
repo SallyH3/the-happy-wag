@@ -6,13 +6,15 @@ import CardWrapper from '../CardWrapper/index.js';
 import Card from '../../components/Card/index.js';
 import { connect } from 'react-redux';
 import { Route } from 'react-router-dom';
+import './_App.scss';
 
 export default class App extends Component {
   constructor() {
     super();
     this.state = {
       token: '',
-      animals: []
+      animals: [],
+      isLoading: true
     }
   }
 
@@ -30,21 +32,27 @@ export default class App extends Component {
     }
     fetch('https://api.petfinder.com/v2/animals', options)
     .then(response => response.json())
-    .then(results => this.setState({ animals: results.animals }))
+    .then(results => this.setState({ animals: results.animals, isLoading: false }))
   }
 
   componentDidMount = () => {
+    this.setState({ isLoading: true })
     this.fetchToken()
   }
 
   render() {
+    let result;
+    if(this.state.isLoading === true) {
+      result = <p className='main-loader'>Loading - please wait...</p>
+    } 
     return (
       <section className='App'>
         <Route exact path='/' component= { Header } />
+          {result}
         <CardWrapper animals={this.state.animals}/>
-        <Route path='/dogs/:id' render={({ match }) => {
-          const selectedCard = this.props.dogs.find(dog => {
-            return dog.dog_id === parseInt(match.params.id)
+        <Route path='/card/:id' render={({ match }) => {
+          const selectedCard = this.state.animals.find(animal => {
+            return animal.animal_id === parseInt(match.params.id)
           })
           if(selectedCard) {
             return <Card {...selectedCard} />
