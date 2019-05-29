@@ -21,7 +21,7 @@ export default class CardWrapper extends Component {
         />
     })
     return(
-      <section>
+      <section className='card-container'>
         {names}
       </section>
     )

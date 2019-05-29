@@ -1,0 +1,23 @@
+.card-display {
+  border: 2px solid rgb(179, 25, 25);
+  border-radius: 4px;
+  width: 250px;
+  height: 200px;
+  margin: 5px;
+  padding: 25px 5px 0px 5px;
+}
+
+.card-layout {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.details {
+  font-family: $primary-font;
+  line-height: 0;
+}
