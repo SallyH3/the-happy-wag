@@ -1,5 +1,16 @@
+.header-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.fas {
+  color: $logo-color;
+  font-size: 45px;
+}
+
 .main-title {
   color: $primary-color;
   font-family: $header-font;
   font-size: 37px;
+  margin-top: 5px;
 }
