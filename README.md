@@ -2,7 +2,7 @@
 
 ## Abstract:
 
-...Coming soon!
+As a solo project, I created an app for users to explore animals they might be interested in adopting as a companion/'furry kid'. My users wanted a place that is a casual experience where they can look through different animals and primarily focus on the meeting in-person experience of the adoption process.
 
 
 ## Setup:
@@ -25,7 +25,9 @@ npm test
 
 ## Wireframes and photos of project:
 
-...coming soon!
+<img width="733" alt="Screen Shot 2019-05-29 at 3 24 04 PM" src="https://user-images.githubusercontent.com/40863560/58594743-c57cb600-822b-11e9-8416-51fa061cfef6.png">
+
+<img width="584" alt="Screen Shot 2019-05-29 at 3 24 27 PM" src="https://user-images.githubusercontent.com/40863560/58594749-c877a680-822b-11e9-8b21-e605e64a0cb2.png">
 
 
 ## Technologies used:
