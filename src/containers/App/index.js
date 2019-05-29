@@ -41,7 +41,7 @@ export default class App extends Component {
     return (
       <section className='App'>
         <Route exact path='/' component= { Header } />
-        <CardWrapper />
+        <CardWrapper animals={this.state.animals}/>
         <Route path='/dogs/:id' render={({ match }) => {
           const selectedCard = this.props.dogs.find(dog => {
             return dog.dog_id === parseInt(match.params.id)

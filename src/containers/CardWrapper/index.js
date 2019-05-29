@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import data from '../../data.js';
 import Card from '../../components/Card';
 
 export default class CardWrapper extends Component {
@@ -11,8 +10,8 @@ export default class CardWrapper extends Component {
   }
 
   render() {
-    console.log('animals', data.animals)
-    const names = data.animals.map(animal => {
+    console.log('animals', this.props.animals)
+    const names = this.props.animals.map(animal => {
       return <Card 
         name={animal.name}
         age={animal.age}
