@@ -17,6 +17,7 @@ export default class CardWrapper extends Component {
         name={animal.name}
         age={animal.age}
         gender={animal.gender}
+        species={animal.species}
         key={animal.id}
         />
     })

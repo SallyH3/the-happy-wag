@@ -1,10 +1,14 @@
 .card-display {
-  border: 2px solid rgb(179, 25, 25);
+  background-color: $card-hover-bkgrd;
+  border: 1px solid $box-border;
   border-radius: 4px;
   width: 250px;
-  height: 200px;
-  margin: 5px;
+  height: 300px;
+  margin: 10px;
   padding: 25px 5px 0px 5px;
+  &:hover {
+    box-shadow: 5px 5px 5px $box-shadow;;
+  }
 }
 
 .card-layout {
@@ -20,4 +24,10 @@
 .details {
   font-family: $primary-font;
   line-height: 0;
+}
+
+.name {
+  font-size: 24px;
+  line-height: 24px;
+  text-align: center;
 }
