@@ -1,9 +1,11 @@
 import React from 'react';
 
-const Card = () => {
+const Card = (props) => {
   return (
     <section>
-      <i class="far fa-heart"></i>
+      <p>{props.name}</p>
+      <p>{props.age}</p>
+      <p>{props.gender}</p>
     </section>
   )
 }
