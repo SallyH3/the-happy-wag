@@ -11,15 +11,31 @@ export default class App extends Component {
   constructor() {
     super();
     this.state = {
-
+      token: '',
+      animals: []
     }
   }
 
-  // componentDidMount = () => {
-  //   const url = `https://api.petfinder.com/v2/animals/api_key=${apiKey}&language=en-US&page=1`
-  //   fetch(url)
-  //   .then(response => console.log('response', response))
-  // }
+  fetchToken = () => {
+    fetch('http://localhost:3001')
+    .then(response => response.json())
+    .then(credentials => this.setState({ token: credentials.token }, this.fetchAnimals))
+  }
+
+  fetchAnimals = () => {
+    const options = {
+      headers: {
+        Authorization: 'Bearer ' + this.state.token
+      }
+    }
+    fetch('https://api.petfinder.com/v2/animals', options)
+    .then(response => response.json())
+    .then(results => this.setState({ animals: results.animals }))
+  }
+
+  componentDidMount = () => {
+    this.fetchToken()
+  }
 
   render() {
     return (
