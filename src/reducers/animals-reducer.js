@@ -1,12 +1,9 @@
 const initialState = []
-
-const animalsReducer = (state=initialState, action) => {
+export const animalsReducer = (state=initialState, action) => {
   switch(action.type) {
-    case 'STORE_ANIMALS' :
+    case 'SET_ANIMALS':
       return action.animals
-      default:
-        return state
+      default: 
+      return state
   }
 }
-
-export default animalsReducer;

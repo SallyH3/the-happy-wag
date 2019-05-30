@@ -5,7 +5,7 @@ const Card = (props) => {
     <section className='card-display'>
       <article className='card-layout'>
 
-        <p className='test'>...Image will go here...</p>
+        {/* <p className='photo'>{props.photo}</p> */}
 
         <p className='details name'>{props.name}</p>
         <p className='details'>Age: {props.age}</p>

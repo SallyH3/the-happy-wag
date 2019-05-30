@@ -1,4 +1,4 @@
-export const storeAnimals = (animals) => ({
-  type: 'STORE_ANIMALS',
+export const setAnimals = (animals) => ({
+  type: 'SET_ANIMALS',
   animals
 })
