@@ -10,7 +10,11 @@ describe('App', () => {
 		wrapper = shallow(
 				<App />
 		);
-	});
+  });
+  
+  it('should match snapshot', () => {
+    expect(wrapper).toMatchSnapshot();
+  })
 
   describe('mapStateToProps', () => {
 
