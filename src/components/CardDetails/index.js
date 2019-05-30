@@ -13,7 +13,7 @@ const CardDetails = (props) => {
       {/* <i className="far fa-heart"></i> */}
       <h1 className='details-name'>{ name }</h1>
       <p className='species-descr'>{ description }</p>
-      {/* <p className='contact-info'>{ cleanContactInfo }</p> */}
+      <p className='contact-info'>{ cleanContactInfo }</p>
       <Link to = '/' className='go-back'>◀ go back</Link>
     </section>
   )

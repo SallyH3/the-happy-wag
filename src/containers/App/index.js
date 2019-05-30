@@ -14,7 +14,7 @@ class App extends Component {
     super();
     this.state = {
       token: '',
-      isLoading: true
+      isLoading: false
     }
   }
 
@@ -33,7 +33,7 @@ class App extends Component {
     fetch('https://api.petfinder.com/v2/animals', options)
     .then(response => response.json())
     .then(results => this.props.setAnimals(results.animals)) 
-    .then(this.setState({isLoading: false}))
+    .then(() => this.setState({isLoading: false}))
   }
 
   componentDidMount = () => {
@@ -50,7 +50,6 @@ class App extends Component {
       <section className='App'>
         <Route exact path='/' component= { Header } />
         <CardWrapper animals={this.props.animals}/>
-        {/* <Route exact path='/CardDetails' component={ CardDetails } /> */}
         <Route exact path='/CardDetails/:id' render={({ match }) => {
           const { id } = match.params;
           const selectedCard = this.props.animals.find(animal => {
