@@ -7,9 +7,8 @@ import CardDetails from '../../components/CardDetails/index.js';
 import { connect } from 'react-redux';
 import { Route } from 'react-router-dom';
 import { setAnimals } from '../../actions';
-import './_App.scss';
 
-class App extends Component {
+export class App extends Component {
   constructor() {
     super();
     this.state = {
