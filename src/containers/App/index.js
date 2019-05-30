@@ -14,7 +14,6 @@ class App extends Component {
     super();
     this.state = {
       token: '',
-      animals: [],
       isLoading: true
     }
   }
@@ -33,29 +32,29 @@ class App extends Component {
     }
     fetch('https://api.petfinder.com/v2/animals', options)
     .then(response => response.json())
-    .then(results => this.props.setAnimals(results.animals))
+    .then(results => this.props.setAnimals(results.animals)) 
+    .then(this.setState({isLoading: false}))
   }
 
   componentDidMount = () => {
-    this.setState({ isLoading: true })
-    this.fetchToken()
+    this.setState({ isLoading: true }, () => {
+      this.fetchToken()
+    })
   }
 
   render() {
-    let result;
-    if(this.state.isLoading === true) {
-      result = <p className='main-loader'>Loading - please wait...</p>
-    } 
+    if(this.state.isLoading) {
+      return <p className='main-loader'>Loading - please wait...</p>
+    } else {
     return (
       <section className='App'>
         <Route exact path='/' component= { Header } />
-          {result}
         <CardWrapper animals={this.props.animals}/>
-        <Route to='/CardDetails' component={ CardDetails } />
-        <Route path='/CardDetails/:id' render={({ match }) => {
+        {/* <Route exact path='/CardDetails' component={ CardDetails } /> */}
+        <Route exact path='/CardDetails/:id' render={({ match }) => {
           const { id } = match.params;
           const selectedCard = this.props.animals.find(animal => {
-            return animal.animal_id === parseInt(id)
+            return animal.id === parseInt(id)
           })
           if(selectedCard) {
             return <CardDetails {...selectedCard} />
@@ -64,6 +63,7 @@ class App extends Component {
         />  
       </section>
     )
+    }
   }
 }
 
