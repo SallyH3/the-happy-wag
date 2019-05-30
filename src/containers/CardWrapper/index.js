@@ -17,7 +17,9 @@ export default class CardWrapper extends Component {
         age={animal.age}
         gender={animal.gender}
         species={animal.species}
+        contact={animal.contact}
         key={animal.id}
+        id={animal.id}
         />
     })
     return(
