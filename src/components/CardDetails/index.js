@@ -8,7 +8,7 @@ const CardDetails = (props) => {
   const { name, description, contact } = props;
   const { city, state, email } = cleanContactInfo(contact);
   return(
-    <section>
+    <section className='details-container'>
       {/* <i className="far fa-heart"></i> */}
       <h1 className='details-name'>{ name }</h1>
       <p className='species-descr'>{ description }</p>
