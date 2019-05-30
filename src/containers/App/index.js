@@ -8,7 +8,7 @@ import { connect } from 'react-redux';
 import { Route } from 'react-router-dom';
 import './_App.scss';
 
-export default class App extends Component {
+class App extends Component {
   constructor() {
     super();
     this.state = {
@@ -41,6 +41,7 @@ export default class App extends Component {
   }
 
   render() {
+    console.log('redux', this.props)
     let result;
     if(this.state.isLoading === true) {
       result = <p className='main-loader'>Loading - please wait...</p>
@@ -51,7 +52,7 @@ export default class App extends Component {
           {result}
         <CardWrapper animals={this.state.animals}/>
         <Route path='/card/:id' render={({ match }) => {
-          const selectedCard = this.state.animals.find(animal => {
+          const selectedCard = this.props.animals.find(animal => {
             return animal.animal_id === parseInt(match.params.id)
           })
           if(selectedCard) {
@@ -63,3 +64,14 @@ export default class App extends Component {
     )
   }
 }
+
+export const mapStateToProps = (state) => ({
+  animals: state.animals
+})
+
+
+export const mapDispatchToProps = (dispatch) => ({
+
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(App)

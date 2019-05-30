@@ -11,7 +11,7 @@ export default class CardWrapper extends Component {
 
   render() {
     console.log('animals', this.props.animals)
-    const names = this.props.animals.map(animal => {
+    const details = this.props.animals.map(animal => {
       return <Card 
         name={animal.name}
         age={animal.age}
@@ -22,7 +22,7 @@ export default class CardWrapper extends Component {
     })
     return(
       <section className='card-container'>
-        {names}
+        {details}
       </section>
     )
   }
