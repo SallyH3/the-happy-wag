@@ -2,6 +2,7 @@
   background-color: $card-hover-bkgrd;
   border: 1px solid $box-border;
   border-radius: 4px;
+  cursor: pointer;
   width: 250px;
   height: 300px;
   margin: 10px;
@@ -12,7 +13,6 @@
 }
 
 .card-layout {
-  cursor: pointer;
   display: flex;
   flex-direction: column;
 }

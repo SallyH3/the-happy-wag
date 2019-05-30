@@ -6,6 +6,7 @@ import CardWrapper from '../CardWrapper/index.js';
 import CardDetails from '../../components/CardDetails/index.js';
 import { connect } from 'react-redux';
 import { Route } from 'react-router-dom';
+import { storeAnimals } from '../../actions';
 import './_App.scss';
 
 class App extends Component {
@@ -40,6 +41,8 @@ class App extends Component {
     this.fetchToken()
   }
 
+
+
   render() {
     let result;
     if(this.state.isLoading === true) {
@@ -50,10 +53,11 @@ class App extends Component {
         <Route exact path='/' component= { Header } />
           {result}
         <CardWrapper animals={this.state.animals}/>
-        <Route path='/animals/:id' render={({ match }) => {
-  
-          const selectedCard = this.props.animals.find(animal => {
-            return animal.animal_id === parseInt(match.params.id)
+        <Route to='/CardDetails' component={ CardDetails } />
+        <Route path='/CardDetails/:id' render={({ match }) => {
+          const { id } = match.params;
+          const selectedCard = this.state.animals.find(animal => {
+            return animal.animal_id === parseInt(id)
           })
           if(selectedCard) {
             return <CardDetails {...selectedCard} />
@@ -70,7 +74,7 @@ export const mapStateToProps = (state) => ({
 })
 
 export const mapDispatchToProps = (dispatch) => ({
-
+  addAnimals: animals => dispatch(storeAnimals(animals))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(App)
