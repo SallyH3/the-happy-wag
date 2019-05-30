@@ -1,10 +1,9 @@
 const initialState = []
-
-const animalsReducer = (state=initialState, action) => {
-  // switch(action.type) {
-  //   case '' :
-  //     return 
-  // }
+export const animalsReducer = (state=initialState, action) => {
+  switch(action.type) {
+    case 'SET_ANIMALS':
+      return action.animals
+      default: 
+      return state
+  }
 }
-
-export default animalsReducer;

@@ -6,6 +6,7 @@ import CardWrapper from '../CardWrapper/index.js';
 import CardDetails from '../../components/CardDetails/index.js';
 import { connect } from 'react-redux';
 import { Route } from 'react-router-dom';
+import { setAnimals } from '../../actions';
 import './_App.scss';
 
 class App extends Component {
@@ -32,7 +33,7 @@ class App extends Component {
     }
     fetch('https://api.petfinder.com/v2/animals', options)
     .then(response => response.json())
-    .then(results => this.setState({ animals: results.animals, isLoading: false }))
+    .then(results => this.props.setAnimals(results.animals))
   }
 
   componentDidMount = () => {
@@ -49,11 +50,12 @@ class App extends Component {
       <section className='App'>
         <Route exact path='/' component= { Header } />
           {result}
-        <CardWrapper animals={this.state.animals}/>
-        <Route path='/animals/:id' render={({ match }) => {
-  
+        <CardWrapper animals={this.props.animals}/>
+        <Route to='/CardDetails' component={ CardDetails } />
+        <Route path='/CardDetails/:id' render={({ match }) => {
+          const { id } = match.params;
           const selectedCard = this.props.animals.find(animal => {
-            return animal.animal_id === parseInt(match.params.id)
+            return animal.animal_id === parseInt(id)
           })
           if(selectedCard) {
             return <CardDetails {...selectedCard} />
@@ -70,7 +72,7 @@ export const mapStateToProps = (state) => ({
 })
 
 export const mapDispatchToProps = (dispatch) => ({
-
+  setAnimals: (animals) => dispatch(setAnimals(animals))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(App)
