@@ -3,7 +3,7 @@ import './_App.scss';
 import { apiKey } from '../../utils/apikey.js';
 import Header from '../../components/Header/index.js';
 import CardWrapper from '../CardWrapper/index.js';
-import Card from '../../components/Card/index.js';
+import CardDetails from '../../components/CardDetails/index.js';
 import { connect } from 'react-redux';
 import { Route } from 'react-router-dom';
 import './_App.scss';
@@ -41,7 +41,6 @@ class App extends Component {
   }
 
   render() {
-    console.log('redux', this.props)
     let result;
     if(this.state.isLoading === true) {
       result = <p className='main-loader'>Loading - please wait...</p>
@@ -51,12 +50,13 @@ class App extends Component {
         <Route exact path='/' component= { Header } />
           {result}
         <CardWrapper animals={this.state.animals}/>
-        <Route path='/card/:id' render={({ match }) => {
+        <Route path='/animals/:id' render={({ match }) => {
+  
           const selectedCard = this.props.animals.find(animal => {
             return animal.animal_id === parseInt(match.params.id)
           })
           if(selectedCard) {
-            return <Card {...selectedCard} />
+            return <CardDetails {...selectedCard} />
           }
         }}
         />  
@@ -68,7 +68,6 @@ class App extends Component {
 export const mapStateToProps = (state) => ({
   animals: state.animals
 })
-
 
 export const mapDispatchToProps = (dispatch) => ({
 
