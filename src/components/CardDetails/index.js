@@ -7,13 +7,12 @@ import { cleanContactInfo } from '../../utils/cleaners.js';
 const CardDetails = (props) => {
   const { name, description, contact } = props;
   const { city, state, email } = cleanContactInfo(contact);
-  console.log('email', email)
   return(
     <section>
       {/* <i className="far fa-heart"></i> */}
       <h1 className='details-name'>{ name }</h1>
       <p className='species-descr'>{ description }</p>
-      <p className='contact-info'>{ cleanContactInfo }</p>
+      <p className='contact-info'>{ `${city}, ${state}, ${email}` }</p>
       <Link to = '/' className='go-back'>◀ go back</Link>
     </section>
   )
