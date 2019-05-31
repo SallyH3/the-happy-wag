@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Card = (props) => {
+export const Card = (props) => {
   return (
     <Link to = {`/CardDetails/${props.id}`} style={{ textDecoration: 'none' }}>
       <section className='card-display'>

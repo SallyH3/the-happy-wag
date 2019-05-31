@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { cleanContactInfo } from '../../utils/cleaners.js';
 
-const CardDetails = (props) => {
+export const CardDetails = (props) => {
   const { name, description, contact } = props;
   const { city, state, email } = cleanContactInfo(contact);
   return(

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Card from '../../components/Card';
 
-export default class CardWrapper extends Component {
+export class CardWrapper extends Component {
   constructor(props) {
     super(props);
     this.state={
@@ -29,3 +29,5 @@ export default class CardWrapper extends Component {
     )
   }
 }
+
+export default CardWrapper;
