@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Header = () => {
+export const Header = () => {
   return(
     <section className='header-wrapper'>
       <i className="fas fa-paw"></i>
