@@ -24,3 +24,9 @@
   text-align: center;
   color: $back-link;
 }
+
+.main-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

@@ -12,11 +12,13 @@ export const CardDetails = (props) => {
       <article className='main-details'>
         <img className='details-photo' src={ `${ photos[0].medium }` } />
         <h1 className='details-name'>{ name }</h1>
-        <p className='species-descr'>Description: { description }</p>
-        <p className='contact-info'>
-          City, state: { `${ city }, ${ state } `}
-          Email: {`${ email }`}
-        </p>
+        <p className='species-descr'>{ description }</p>
+        <article className='contact-info'>
+          <p className='location'>
+            Location: { `${ city }, ${ state } `}
+          </p>
+          <p className='email'>Email: {`${ email }`}</p>
+        </article>
         <Link to = '/' className='go-back'>◀ go back</Link>
       </article>
     </section>
