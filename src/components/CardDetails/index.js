@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { cleanContactInfo } from '../../utils/cleaners.js';
 
 export const CardDetails = (props) => {
+  // console.log('photo', photos[0])
   const { name, description, contact, photos } = props;
   const { city, state, email } = cleanContactInfo(contact);
   return(

@@ -13,7 +13,7 @@ export class CardWrapper extends Component {
     console.log('animals', this.props.animals)
     const details = this.props.animals.map(animal => {
       return <Card 
-        // photo={animal.photos}
+        photo={animal.photos || ''}
         name={animal.name}
         age={animal.age}
         gender={animal.gender}
