@@ -9,12 +9,8 @@ export const CardDetails = (props) => {
   const { city, state, email } = cleanContactInfo(contact);
   return(
     <section className='details-container'>
-      {/* <i className="far fa-heart"></i> */}
       <h1 className='details-name'>{ name }</h1>
-
-      {/* photo details below is coming back as [object, object] - need to fix */}
-      
-      <p className='photo-details'>{ `${ photos }` }</p>
+      <img src={ `${ photos[0].medium }` } />
       <p className='species-descr'>{ description }</p>
       <p className='contact-info'>
         { `${ city }, ${ state }, ${ email }` }

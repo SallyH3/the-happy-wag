@@ -32,7 +32,7 @@ export class App extends Component {
     fetch('https://api.petfinder.com/v2/animals', options)
     .then(response => response.json())
     .then(results => this.props.setAnimals(results.animals)) 
-    .then(() => this.setState({isLoading: false}))
+    .then(() => this.setState({ isLoading: false }))
   }
 
   componentDidMount = () => {
