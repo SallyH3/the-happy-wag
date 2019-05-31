@@ -4,10 +4,12 @@ import { Link } from 'react-router-dom';
 
 export const Card = (props) => {
   const { photo } = props
-  console.log('photo', photo[0])
   let medium = '';
   if (photo[0]) {
     medium = photo[0].medium
+  } else {
+    //not sure if this is working below...
+    return <a href='/src/pets.png' />
   }
   return (
     <Link to = {`/CardDetails/${props.id}`} style={{ textDecoration: 'none' }}>
