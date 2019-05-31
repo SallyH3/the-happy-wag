@@ -1,0 +1,26 @@
+.details-container {
+  border-radius: 6px;
+  color: $detail-text;
+  display: flex;
+  z-index: 4;
+  background-color: hsl(278, 93%, 21%);
+  width: 450px;
+  height: 500px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  position: absolute;
+  margin-top: -1900px;
+  margin-left: 450px;
+}
+
+.details-photo {
+  height: 225px;
+  width: 250px;
+}
+
+.go-back {
+  text-align: center;
+  color: $back-link;
+}

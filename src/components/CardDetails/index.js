@@ -5,18 +5,20 @@ import { connect } from 'react-redux';
 import { cleanContactInfo } from '../../utils/cleaners.js';
 
 export const CardDetails = (props) => {
-  // console.log('photo', photos[0])
   const { name, description, contact, photos } = props;
   const { city, state, email } = cleanContactInfo(contact);
   return(
     <section className='details-container'>
-      <h1 className='details-name'>{ name }</h1>
-      <img src={ `${ photos[0].medium }` } />
-      <p className='species-descr'>{ description }</p>
-      <p className='contact-info'>
-        { `${ city }, ${ state }, ${ email }` }
-      </p>
-      <Link to = '/' className='go-back'>◀ go back</Link>
+      <article className='main-details'>
+        <img className='details-photo' src={ `${ photos[0].medium }` } />
+        <h1 className='details-name'>{ name }</h1>
+        <p className='species-descr'>Description: { description }</p>
+        <p className='contact-info'>
+          City, state: { `${ city }, ${ state } `}
+          Email: {`${ email }`}
+        </p>
+        <Link to = '/' className='go-back'>◀ go back</Link>
+      </article>
     </section>
   )
       }
