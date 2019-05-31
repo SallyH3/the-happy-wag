@@ -5,15 +5,16 @@
   color: $secondary-color;
   cursor: pointer;
   width: 250px;
-  height: 300px;
-  margin: 10px;
-  padding: 25px 5px 0px 5px;
+  height: 360px;
+  margin: 30px;
+  padding: 5px 0px 5px 0px;
   &:hover {
     box-shadow: 5px 5px 5px $box-shadow;
   }
 }
 
 .card-layout {
+  align-items: center;
   display: flex;
   flex-direction: column;
 }
@@ -31,6 +32,11 @@
 .name {
   font-family: $animal-name-font;
   font-size: 28px;
-  line-height: 24px;
   text-align: center;
+}
+
+img {
+  height: 185px;
+  margin: 5px;
+  width: 200px;
 }
