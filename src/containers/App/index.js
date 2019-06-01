@@ -6,6 +6,7 @@ import CardWrapper from '../CardWrapper/index.js';
 import CardDetails from '../../components/CardDetails/index.js';
 import { connect } from 'react-redux';
 import { Route } from 'react-router-dom';
+// import { getAnimals } from '../../utils/fetchapi';
 import { setAnimals } from '../../actions';
 
 export class App extends Component {
@@ -25,12 +26,13 @@ export class App extends Component {
   }
 
   fetchAnimals = () => {
+    const url = 'https://api.petfinder.com/v2/animals'
     const options = {
       headers: {
         Authorization: 'Bearer ' + this.state.token
       }
     }
-    fetch('https://api.petfinder.com/v2/animals', options)
+    fetch(url, options)
     .then(response => response.json())
     .then(results => this.props.setAnimals(results.animals)) 
     .then(() => this.setState({ isLoading: false }))
