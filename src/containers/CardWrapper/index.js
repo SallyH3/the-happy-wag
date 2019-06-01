@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Card from '../../components/Card';
+import PropTypes from 'prop-types';
 
 export class CardWrapper extends Component {
   constructor(props) {
@@ -32,3 +33,7 @@ export class CardWrapper extends Component {
 }
 
 export default CardWrapper;
+
+CardWrapper.propTypes = {
+  animals: PropTypes.array
+}
