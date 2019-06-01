@@ -13,20 +13,14 @@ export const CardDetails = (props) => {
         <img className='details-photo' src={ `${ photos[0].medium }` } />
         <h1 className='details-name'>{ name }</h1>
         <p className='species-descr'>{ description }</p>
-        {/* <article className='contact-info'> */}
           <p className='location'>
             Location: { `${ city }, ${ state } `}
           </p>
           <p className='email'>Email: {`${ email }`}</p>
         </article>
         <Link to = '/' className='go-back'>◀ Go Back</Link>
-      {/* </article> */}
     </section>
   )
       }
 
-export const mapStateToProps = (state) => ({
-  animals: state.animals
-})
-
-export default connect(mapStateToProps)(CardDetails)
+export default CardDetails
