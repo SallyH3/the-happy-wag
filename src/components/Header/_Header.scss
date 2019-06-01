@@ -1,7 +1,10 @@
 .header-wrapper {
-  border-bottom: 3px solid $header-border;
+  border-radius: 3px;
+  box-shadow: 5px 5px 5px black;
+  background-color: white;
   display: flex;
   justify-content: space-between;
+  padding: 5px 10px 0px 10px;
 }
 
 .fas {
