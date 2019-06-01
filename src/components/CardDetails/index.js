@@ -29,5 +29,12 @@ export const CardDetails = (props) => {
 export default CardDetails
 
 CardDetails.propTypes = {
-  //add later
+  photos: PropTypes.array,
+  name: PropTypes.string,
+  status: PropTypes.string,
+  organization_id: PropTypes.string,
+  description: PropTypes.string,
+  city: PropTypes.string,
+  state: PropTypes.string,
+  email: PropTypes.string
 }
