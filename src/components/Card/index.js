@@ -1,6 +1,7 @@
 import React from 'react';
 import CardDetails from '../CardDetails';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 export const Card = (props) => {
   const { photo } = props
@@ -28,3 +29,13 @@ export const Card = (props) => {
 }
 
 export default Card;
+
+Card.propTypes = {
+  age: PropTypes.string,
+  contact: PropTypes.object,
+  gender: PropTypes.string,
+  id: PropTypes.number,
+  name: PropTypes.string,
+  photo: PropTypes.array,
+  species: PropTypes.string
+}
