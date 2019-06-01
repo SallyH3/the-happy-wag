@@ -8,19 +8,19 @@ export const CardDetails = (props) => {
   const { name, description, contact, photos } = props;
   const { city, state, email } = cleanContactInfo(contact);
   return(
-    <section className='details-container'>
+    <section className='modal'>
       <article className='main-details'>
         <img className='details-photo' src={ `${ photos[0].medium }` } />
         <h1 className='details-name'>{ name }</h1>
         <p className='species-descr'>{ description }</p>
-        <article className='contact-info'>
+        {/* <article className='contact-info'> */}
           <p className='location'>
             Location: { `${ city }, ${ state } `}
           </p>
           <p className='email'>Email: {`${ email }`}</p>
         </article>
-        <Link to = '/' className='go-back'>◀ go back</Link>
-      </article>
+        <Link to = '/' className='go-back'>◀ Go Back</Link>
+      {/* </article> */}
     </section>
   )
       }

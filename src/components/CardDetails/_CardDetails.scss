@@ -1,33 +1,45 @@
-.details-container {
+.modal {
   box-shadow: 8px 8px 8px 8px hsl(0, 10%, 12%);
   border-radius: 6px;
-  color: $detail-text;
   display: flex;
-  z-index: 4;
+  font-family: $primary-font;
+  z-index: 2;
   background-color: hsl(278, 93%, 21%);
   width: 450px;
-  height: 500px;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
+  height: 550px;
   padding: 10px;
+  flex-direction: column;
   position: absolute;
   margin-top: -1900px;
   margin-left: 450px;
 }
 
+.details-name {
+  color: $modal-name-color;
+  font-family: $animal-name-font;
+  font-size: 24px;
+  margin: 1px;
+  text-align: center;
+}
+
+.species-descr,
+.location,
+.email {
+  color: $detail-text;
+}
+
 .details-photo {
   height: 225px;
   width: 250px;
+  margin-top: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
 }
 
 .go-back {
   text-align: center;
   color: $back-link;
-}
-
-.main-details {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  margin-left: 350px;
 }
