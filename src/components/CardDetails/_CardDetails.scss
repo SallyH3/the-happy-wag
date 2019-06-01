@@ -1,16 +1,16 @@
 .modal {
-  box-shadow: 8px 8px 8px 8px hsl(0, 10%, 12%);
+  box-shadow: 8px 8px 8px 8px $modal-shadow;
   border-radius: 6px;
   display: flex;
   font-family: $primary-font;
   z-index: 2;
-  background-color: hsl(278, 93%, 21%);
+  background-color: $modal-bkgrd;
   width: 450px;
   height: 550px;
   padding: 10px;
   flex-direction: column;
   position: absolute;
-  margin-top: -1900px;
+  margin-top: -1600px;
   margin-left: 450px;
 }
 
@@ -18,6 +18,7 @@
   color: $modal-name-color;
   font-family: $animal-name-font;
   font-size: 24px;
+  letter-spacing: 3px;
   margin: 1px;
   text-align: center;
 }
