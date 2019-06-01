@@ -1,5 +1,6 @@
 .card-display {
-  background-color: $card-hover-bkgrd;
+  background-color: $card-color;
+  box-shadow: 5px 5px 5px $box-shadow;
   border: 1px solid $box-border;
   border-radius: 4px;
   color: $secondary-color;
@@ -8,8 +9,9 @@
   height: 360px;
   margin: 29px;
   padding: 5px 0px 5px 0px;
+  transition: 0.3s;
   &:hover {
-    box-shadow: 5px 5px 5px $box-shadow;
+    background-color: $card-hover-bkgrd;
   }
 }
 
