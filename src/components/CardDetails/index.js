@@ -3,6 +3,7 @@ import App from '../../containers/App';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { cleanContactInfo } from '../../utils/cleaners.js';
+import PropTypes from 'prop-types';
 
 export const CardDetails = (props) => {
   const { name, description, contact, photos, status, organization_id } = props;
@@ -26,3 +27,7 @@ export const CardDetails = (props) => {
       }
 
 export default CardDetails
+
+CardDetails.propTypes = {
+  //add later
+}

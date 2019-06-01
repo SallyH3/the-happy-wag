@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 export const Header = () => {
   return(
@@ -14,3 +15,9 @@ export const Header = () => {
 }
 
 export default Header;
+
+Header.propTypes = {
+  history: PropTypes.object,
+  location: PropTypes.object,
+  match: PropTypes.object
+}
