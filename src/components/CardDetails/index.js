@@ -5,13 +5,15 @@ import { connect } from 'react-redux';
 import { cleanContactInfo } from '../../utils/cleaners.js';
 
 export const CardDetails = (props) => {
-  const { name, description, contact, photos } = props;
+  const { name, description, contact, photos, status, organization_id } = props;
   const { city, state, email } = cleanContactInfo(contact);
   return(
     <section className='modal'>
       <article className='main-details'>
         <img className='details-photo' src={ `${ photos[0].medium }` } />
         <h1 className='details-name'>{ name }</h1>
+        <p className='status'>Status: { status }</p>
+        <p className='org_id'>Organization id: { organization_id }</p>
         <p className='species-descr'>{ description }</p>
           <p className='location'>
             Location: { `${ city }, ${ state } `}

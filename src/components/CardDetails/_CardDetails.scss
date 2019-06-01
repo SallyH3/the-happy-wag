@@ -6,7 +6,7 @@
   z-index: 2;
   background-color: $modal-bkgrd;
   width: 450px;
-  height: 550px;
+  height: 650px;
   padding: 10px;
   flex-direction: column;
   position: absolute;
@@ -25,7 +25,8 @@
 
 .species-descr,
 .location,
-.email {
+.email,
+.status, .org_id {
   color: $detail-text;
 }
 
