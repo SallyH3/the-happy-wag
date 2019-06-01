@@ -3,3 +3,9 @@
 @import './containers/App/_App.scss';
 @import './components/Card/_Card.scss';
 @import './components/CardDetails/_CardDetails.scss';
+
+body, html {
+  background: url('./background.png');
+  background-size: 100%;
+  background-position: center;
+}
