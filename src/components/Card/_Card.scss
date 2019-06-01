@@ -1,9 +1,9 @@
 .card-display {
   background-color: $card-color;
   box-shadow: 5px 5px 5px $box-shadow;
-  border: 1px solid $box-border;
   border-radius: 4px;
   color: $secondary-color;
+  letter-spacing: 1px;
   cursor: pointer;
   width: 250px;
   height: 360px;
@@ -12,6 +12,7 @@
   transition: 0.3s;
   &:hover {
     background-color: $card-hover-bkgrd;
+    color: $hover-text;
   }
 }
 

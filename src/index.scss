@@ -4,10 +4,6 @@
 @import './components/Card/_Card.scss';
 @import './components/CardDetails/_CardDetails.scss';
 
-body, html {
-  background: linear-gradient( hsla(281, 34%, 46%, 0.82),
-   hsla(283, 56%, 28%, 0.82) ), 
-   url('./background.png');
-  background-repeat: repeat;
-  background-position: center;
+body {
+  background: hsla(144, 3%, 66%, 0.82);
 }

@@ -1,20 +1,32 @@
 .header-wrapper {
+  background: linear-gradient( hsla(240, 5%, 18%, 0.82),
+  hsla(0, 0%, 21%, 0.82) ), url('./background.png');
+  background-size: 65%;
+  background-position: center;
   border-radius: 3px;
   box-shadow: 5px 5px 5px black;
-  background-color: $header-bkgrd;
   display: flex;
-  justify-content: space-between;
-  padding: 5px 10px 0px 10px;
-}
-
-.fas {
-  color: $logo-color;
-  font-size: 45px;
+  align-items: center;
+  flex-direction: column;
 }
 
 .main-title {
   color: $primary-color;
   font-family: $header-font;
-  font-size: 40px;
-  margin-top: 5px;
+  font-size: 50px;
+  letter-spacing: 3px;
+  margin-bottom: 35px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0;
+}
+
+.subtitle {
+  color: hsl(280, 3%, 58%);
+  font-family: $primary-font;
+  margin-top: 0;
+  margin-bottom: 10px;
 }
