@@ -6,6 +6,7 @@ import CardWrapper from '../CardWrapper/index.js';
 import CardDetails from '../../components/CardDetails/index.js';
 import { connect } from 'react-redux';
 import { Route } from 'react-router-dom';
+import PropTypes from 'prop-types';
 // import { getAnimals } from '../../utils/fetchapi';
 import { setAnimals } from '../../actions';
 
@@ -80,3 +81,8 @@ export const mapDispatchToProps = (dispatch) => ({
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(App)
+
+App.propTypes = {
+  animals: PropTypes.array,
+  setAnimals: PropTypes.func
+}
