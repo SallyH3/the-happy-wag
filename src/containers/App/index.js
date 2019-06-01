@@ -13,7 +13,8 @@ export class App extends Component {
     super();
     this.state = {
       token: '',
-      isLoading: false
+      isLoading: false,
+      errorStatus: ''
     }
   }
 
@@ -33,6 +34,9 @@ export class App extends Component {
     .then(response => response.json())
     .then(results => this.props.setAnimals(results.animals)) 
     .then(() => this.setState({ isLoading: false }))
+    .catch(error => this.setState({ 
+      errorStatus: 'Error fetching data' 
+    }))
   }
 
   componentDidMount = () => {
