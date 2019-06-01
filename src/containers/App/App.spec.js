@@ -2,6 +2,7 @@ import { App, mapStateToProps, mapDispatchToProps } from '../App';
 import { shallow } from 'enzyme';
 import React from 'react';
 import { setAnimals } from '../../actions';
+import { mockAnimals } from '../../utils/mockData';
 import { createSerializer } from 'enzyme-to-json';
 
 expect.addSnapshotSerializer(createSerializer({mode: 'deep'}));
