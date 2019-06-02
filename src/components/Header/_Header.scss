@@ -4,7 +4,7 @@
   background-size: 65%;
   background-position: center;
   border-radius: 3px;
-  box-shadow: 5px 5px 5px black;
+  box-shadow: 5px 5px 5px rgb(22, 21, 21);
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -13,7 +13,7 @@
 .main-title {
   color: $primary-color;
   font-family: $header-font;
-  font-size: 50px;
+  font-size: 55px;
   letter-spacing: 3px;
   margin-bottom: 35px;
 }
@@ -26,6 +26,7 @@
 
 .subtitle {
   color: hsl(280, 3%, 58%);
+  font-size: 20px;
   font-family: $primary-font;
   margin-top: 0;
   margin-bottom: 10px;
