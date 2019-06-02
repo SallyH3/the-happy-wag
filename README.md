@@ -18,7 +18,7 @@ Once you have cloned the repo, install the library dependencies. Run:
 ```bash
 npm install
 ```
-To run tests in the game program, Run:
+To run tests in the program, Run:
 ```bash
 npm test
 ```
@@ -26,8 +26,6 @@ npm test
 ## Wireframes and photos of project:
 
 <img width="733" alt="Screen Shot 2019-05-29 at 3 24 04 PM" src="https://user-images.githubusercontent.com/40863560/58594743-c57cb600-822b-11e9-8416-51fa061cfef6.png">
-
-<img width="584" alt="Screen Shot 2019-05-29 at 3 24 27 PM" src="https://user-images.githubusercontent.com/40863560/58594749-c877a680-822b-11e9-8b21-e605e64a0cb2.png">
 
 
 ## Technologies used:
