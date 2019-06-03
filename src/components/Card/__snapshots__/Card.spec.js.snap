@@ -1,3 +1,45 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Card should match snapshot 1`] = `undefined`;
+exports[`Card should match snapshot 1`] = `
+<Link
+  style={
+    Object {
+      "textDecoration": "none",
+    }
+  }
+  to="/CardDetails/undefined"
+>
+  <section
+    className="card-display"
+  >
+    <article
+      className="card-layout"
+    >
+      <img
+        src="https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/44868950/1/?bust=1559597198&width=300"
+      />
+      <p
+        className="details name"
+      />
+      <p
+        className="details"
+      >
+        Age: 
+      </p>
+      <p
+        className="details"
+      >
+        Gender: 
+      </p>
+      <p
+        className="details"
+      >
+        Species: 
+      </p>
+      <p
+        className="card-back"
+      />
+    </article>
+  </section>
+</Link>
+`;

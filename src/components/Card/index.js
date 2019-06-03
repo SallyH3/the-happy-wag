@@ -36,6 +36,6 @@ Card.propTypes = {
   gender: PropTypes.string,
   id: PropTypes.number,
   name: PropTypes.string,
-  photo: PropTypes.array,
+  photos: PropTypes.array,
   species: PropTypes.string
 }

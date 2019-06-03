@@ -1,3 +1,32 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CardWrapper should match snapshot 1`] = `undefined`;
+exports[`CardWrapper should match snapshot 1`] = `
+<section
+  className="card-container"
+>
+  <Card
+    age="Baby"
+    contact={
+      Object {
+        "address": Object {
+          "city": "Denton",
+          "state": "TX",
+        },
+        "description": "Marcel is such a lovable little boy. He loves to have his...",
+        "email": "Animal.Services@cityofdenton.com",
+        "gender": "Male",
+        "id": 44853380,
+        "name": "Marcel",
+        "phone": "(940) 349-7594",
+        "photos": Array [
+          Object {
+            "medium": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/44868950/1/?bust=1559597198&width=300",
+          },
+        ],
+        "species": "Cat",
+      }
+    }
+    photo=""
+  />
+</section>
+`;
