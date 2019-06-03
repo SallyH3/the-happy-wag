@@ -1,36 +1,36 @@
-import React, { Component }from 'react';
-import './_App.scss';
-import { apiKey } from '../../utils/apikey.js';
-import Header from '../../components/Header/index.js';
-import CardWrapper from '../CardWrapper/index.js';
-import CardDetails from '../../components/CardDetails/index.js';
-import { connect } from 'react-redux';
-import { Route } from 'react-router-dom';
-import PropTypes from 'prop-types';
-// import { getAnimals } from '../../utils/fetchapi';
-import { setAnimals } from '../../actions';
+import React, { Component }from "react";
+import "./_App.scss";
+import { apiKey } from "../../utils/apikey.js";
+import Header from "../../components/Header/index.js";
+import CardWrapper from "../CardWrapper/index.js";
+import CardDetails from "../../components/CardDetails/index.js";
+import { connect } from "react-redux";
+import { Route } from "react-router-dom";
+import PropTypes from "prop-types";
+// import { getAnimals } from "../../utils/fetchapi";
+import { setAnimals } from "../../actions";
 
 export class App extends Component {
   constructor() {
     super();
     this.state = {
-      token: '',
+      token: "",
       isLoading: false,
-      errorStatus: ''
+      errorStatus: ""
     }
   }
 
   fetchToken = () => {
-    fetch('http://localhost:3001')
+    fetch("http://localhost:3001")
     .then(response => response.json())
     .then(credentials => this.setState({ token: credentials.token }, this.fetchAnimals))
   }
 
   fetchAnimals = () => {
-    const url = 'https://api.petfinder.com/v2/animals'
+    const url = "https://api.petfinder.com/v2/animals"
     const options = {
       headers: {
-        Authorization: 'Bearer ' + this.state.token
+        Authorization: "Bearer " + this.state.token
       }
     }
     fetch(url, options)
@@ -38,7 +38,7 @@ export class App extends Component {
     .then(results => this.props.setAnimals(results.animals)) 
     .then(() => this.setState({ isLoading: false }))
     .catch(error => this.setState({ 
-      errorStatus: 'Error fetching data' 
+      errorStatus: "Error fetching data" 
     }))
   }
 
@@ -50,13 +50,13 @@ export class App extends Component {
 
   render() {
     if(this.state.isLoading) {
-      return <p className='main-loader'>Loading - please wait...</p>
+      return <p className="main-loader">Loading - please wait...</p>
     } else {
     return (
-      <section className='App'>
-        <Route exact path='/' component= { Header } />
+      <section className="App">
+        <Route exact path="/" component= { Header } />
         <CardWrapper animals={this.props.animals}/>
-        <Route exact path='/CardDetails/:id' render={({ match }) => {
+        <Route exact path="/CardDetails/:id" render={({ match }) => {
           const { id } = match.params;
           const selectedCard = this.props.animals.find(animal => {
             return animal.id === parseInt(id)
