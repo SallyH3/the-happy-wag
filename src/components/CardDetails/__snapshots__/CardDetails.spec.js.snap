@@ -1,3 +1,50 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CardDetails should match snapshot 1`] = `undefined`;
+exports[`CardDetails should match snapshot 1`] = `
+<section
+  className="modal"
+>
+  <article
+    className="main-details"
+  >
+    <img
+      className="details-photo"
+      src="https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/44868950/1/?bust=1559597198&width=300"
+    />
+    <h1
+      className="details-name"
+    />
+    <p
+      className="status"
+    >
+      Status: 
+    </p>
+    <p
+      className="org_id"
+    >
+      Organization id: 
+    </p>
+    <p
+      className="species-descr"
+    />
+    <p
+      className="location"
+    >
+      Location: 
+      Denton, TX 
+    </p>
+    <p
+      className="email"
+    >
+      Email: 
+      Animal.Services@cityofdenton.com
+    </p>
+  </article>
+  <Link
+    className="go-back"
+    to="/"
+  >
+    ◀ Go Back
+  </Link>
+</section>
+`;

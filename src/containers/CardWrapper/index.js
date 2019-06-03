@@ -11,7 +11,6 @@ export class CardWrapper extends Component {
   }
 
   render() {
-    console.log('animals', this.props.animals)
     const details = this.props.animals.map(animal => {
       return <Card 
         photo={animal.photos || ''}
