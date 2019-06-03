@@ -20,3 +20,20 @@ export const mockAnimals = [
     species: "Cat"
   }
 ]
+
+export const mockSelectedAnimal =  {
+  age: "Baby",
+  contact: {email: "furrfoundation@gmail.com"},
+  description: "Marcel is such a lovable little boy. He loves to have his...",
+  gender: "Male",
+  id: 44853380,
+  name: "Marcel",
+  photos: [{}],
+  species: "Cat"
+}
+
+export const mockPhotos = [
+  {
+    medium: "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/44868950/1/?bust=1559597198&width=300"
+  }
+]

@@ -1,3 +1,26 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CardWrapper should match snapshot 1`] = `undefined`;
+exports[`CardWrapper should match snapshot 1`] = `
+<section
+  className="card-container"
+>
+  <Card
+    age="Baby"
+    contact={
+      Object {
+        "email": "furrfoundation@gmail.com",
+      }
+    }
+    gender="Male"
+    id={44853380}
+    key="44853380"
+    name="Marcel"
+    photo={
+      Array [
+        Object {},
+      ]
+    }
+    species="Cat"
+  />
+</section>
+`;
