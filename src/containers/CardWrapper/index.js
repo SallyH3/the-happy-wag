@@ -13,9 +13,14 @@ export class CardWrapper extends Component {
   render() {
     const details = this.props.animals.map(animal => {
       return <Card 
-      {...animal}
         photo={animal.photos || ''}
+        name={animal.name}
+        age={animal.age}
+        gender={animal.gender}
+        species={animal.species}
+        contact={animal.contact}
         key={animal.id}
+        id={animal.id}
         />
     })
     return(
