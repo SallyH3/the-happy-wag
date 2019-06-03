@@ -9,8 +9,7 @@ export const Card = (props) => {
   if (photo[0]) {
     medium = photo[0].medium
   } else {
-    //not sure if this is working below...
-    return <a href='/src/pets.png' />
+    return 
   }
   return (
     <Link to = {`/CardDetails/${props.id}`} style={{ textDecoration: 'none' }}>
