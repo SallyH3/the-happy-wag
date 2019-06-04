@@ -2,21 +2,21 @@ import React from 'react';
 import CardDetails from '../CardDetails';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import fallbackImage from '../../pets.png';
 
 export const Card = (props) => {
   const { photo } = props
   let medium = '';
-  if (photo[0]) {
-    medium = photo[0].medium
+  if (!photo[0]) {
+    medium = fallbackImage
   } else {
-    //not sure if this is working below...
-    return <a href='/src/pets.png' />
+    medium = photo[0].medium
   }
   return (
     <Link to = {`/CardDetails/${props.id}`} style={{ textDecoration: 'none' }}>
       <section className='card-display'>
         <article className='card-layout'>
-        <img src={ `${ medium }` } />
+        <img src={ medium  } />
         <p className='details name'>{props.name}</p>
         <p className='details'>Age: {props.age}</p>
         <p className='details'>Gender: {props.gender}</p>
