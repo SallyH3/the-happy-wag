@@ -39,7 +39,6 @@ export class App extends Component {
       const result = await getAnimals(url, options)
       this.props.setAnimals(result.animals)
       this.props.isLoading(false)
-      // console.log('result', result.animals)
     } catch(error) {
         this.setState({errorStatus: error.message})
     }

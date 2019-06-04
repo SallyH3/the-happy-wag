@@ -3,6 +3,7 @@ import { getAnimals } from './apiCalls.js';
 describe("getAnimals", () => {
   let mockUrl;
   let mockResponse;
+  let mockOptions;
 
   beforeEach(() => {
     mockUrl = "https://api.petfinder.com/v2/animals"
@@ -19,7 +20,8 @@ describe("getAnimals", () => {
 
     mockOptions = {
       headers: {
-        Authorization: "Bearer " + this.state.token
+        Authorization: "Bearer 99999"
+
     }
   }
 
@@ -39,10 +41,12 @@ describe("getAnimals", () => {
   it("should return an error is status is not okay", async () => {
     window.fetch = jest.fn().mockImplementation(() => {
       return Promise.resolve({
-        ok: false
+        ok: false,
+        json: () => Promise.reject(mockResponse)
       })
     })
     const result = await getAnimals(mockUrl, mockOptions)
-    expect(result).rejects.toThrow("error")
+    let error = Error('Error fetching data')
+    expect(result).toEqual(error)
     })
 })
