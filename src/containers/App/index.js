@@ -17,7 +17,6 @@ export class App extends Component {
     super();
     this.state = {
       token: "",
-      // isLoading: false,
       errorStatus: ""
     }
   }
@@ -25,7 +24,7 @@ export class App extends Component {
   fetchToken = () => {
     fetch("http://localhost:3001")
     .then(response => response.json())
-    .then(credentials => this.setState({token: credentials
+    .then(credentials => this.setState({token: credentials.token
     }, this.fetchAnimals))
   }
 
@@ -33,7 +32,7 @@ export class App extends Component {
     const url = "https://api.petfinder.com/v2/animals"
     const options = {
       headers: {
-        Authorization: "Bearer " + this.state.token.token
+        Authorization: "Bearer " + this.state.token
       }
     }
     // fetch(url, options)
