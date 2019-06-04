@@ -34,7 +34,21 @@ describe('App', () => {
 
 			const mappedProps = mapStateToProps(mockState)
 			expect(mappedProps).toEqual(expected)
-		})
+    })
+
+    it('should return a boolean if the page is loading or data has been fetched', () => {
+      const mockState = {
+        boolean: true
+      }
+
+      const expected = {
+        boolean: mockState.boolean
+      }
+
+      const mappedProps = mapStateToProps(mockState)
+
+      expect(mappedProps).toEqual(expected)
+    })
   });
   
   describe('mapDispatchToProps', () => {
