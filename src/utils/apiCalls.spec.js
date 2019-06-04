@@ -21,16 +21,17 @@ describe("getAnimals", () => {
       headers: {
         Authorization: "Bearer " + this.state.token
     }
+  }
 
+  })
+  
+  it("should return a response if status is okay", async () => {
     window.fetch = jest.fn().mockImplementation(() => {
       return Promise.resolve({
         ok: true,
         json: () => Promise.resolve(mockResponse)
       })
     })
-  })
-
-  it("should return a response if status is okay", async () => {
     const result = await getAnimals()
     expect(result).toEqual(mockResponse)
   })
@@ -41,7 +42,7 @@ describe("getAnimals", () => {
         ok: false
       })
     })
-    const result = await getAnimals(mockUrl, options)
+    const result = await getAnimals(mockUrl, mockOptions)
     expect(result).rejects.toThrow("error")
     })
 })

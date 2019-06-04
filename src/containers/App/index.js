@@ -17,7 +17,6 @@ export class App extends Component {
     super();
     this.state = {
       token: "",
-      // isLoading: false,
       errorStatus: ""
     }
   }
