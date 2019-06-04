@@ -1,8 +1,7 @@
 import { App, mapStateToProps, mapDispatchToProps } from '../App';
 import { shallow } from 'enzyme';
 import React from 'react';
-import { setAnimals } from '../../actions';
-import { mockAnimals } from '../../utils/mockData';
+import { setAnimals, handleLoading } from '../../actions';
 import { createSerializer } from 'enzyme-to-json';
 
 expect.addSnapshotSerializer(createSerializer({mode: 'deep'}));
@@ -53,15 +52,27 @@ describe('App', () => {
   
   describe('mapDispatchToProps', () => {
 
-    it('should call dispatch when using a function from mapDispatchToProps', () => {
+    it('should call dispatch when using a function, setAnimals from mapDispatchToProps', () => {
 
-      const mockDispatch = jest.fn();
+      const mockDispatch = jest.fn()
 
       const actionToDispatch = setAnimals(['animals'])
 
       const mappedProps = mapDispatchToProps(mockDispatch)
 
       mappedProps.setAnimals(['animals'])
+      expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch)
+    })
+
+    it('should call dispatch when using a function, handleLoading from mapDispatchToProps', () => {
+
+      const mockDispatch = jest.fn()
+
+      const actionToDispatch = handleLoading(true)
+
+      const mappedProps = mapDispatchToProps(mockDispatch)
+
+      mappedProps.isLoading(true)
       expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch)
     })
   })
