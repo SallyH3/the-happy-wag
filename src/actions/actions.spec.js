@@ -12,4 +12,14 @@ describe("actions", () => {
 
     expect(result).toEqual(expected)
   })
+
+  it("should return type of HANDLE_LOADING with a payload of a boolean", () => {
+
+    const boolean = true
+    const expected = {
+      type: "HANDLE_LOADING",
+      boolean
+    }
+    const result = actions.handleLoading(boolean)
+  })
 })
