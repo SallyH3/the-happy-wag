@@ -1,9 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`App should match snapshot 1`] = `
-<p
-  className="main-loader"
+<section
+  className="App"
 >
-  Loading - please wait...
-</p>
+  <Route
+    component={[Function]}
+    exact={true}
+    path="/"
+  />
+  <CardWrapper />
+  <Route
+    exact={true}
+    path="/CardDetails/:id"
+    render={[Function]}
+  />
+</section>
 `;
