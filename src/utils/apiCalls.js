@@ -6,8 +6,3 @@ export const getAnimals = async (url, options) => {
   }
   return result
 }
-
-//tests:
-//fetch correct param
-//good response
-//one for response error

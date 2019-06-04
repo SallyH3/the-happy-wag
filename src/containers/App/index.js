@@ -35,15 +35,6 @@ export class App extends Component {
         Authorization: "Bearer " + this.state.token
       }
     }
-    // fetch(url, options)
-    // .then(response => response.json())
-    // .then(results => this.props.setAnimals(results.animals)) 
-    // .then(() => this.setState({ isLoading: false }))
-    // .catch(error => this.setState({ 
-    //   errorStatus: "Error fetching data" 
-    // }))
-
-    //add try catch too
     try { 
       const result = await getAnimals(url, options)
       this.props.setAnimals(result.animals)
@@ -54,19 +45,8 @@ export class App extends Component {
     }
   }
 
-  // fetchSomeAnimals = async (url, options) => {
-  //   const response = await fetch(url, options) 
-  //   const result = response.json()
-  //   if(!response.ok) {
-  //     throw Error('Error fetching data')
-  //   }
-  //   return result
-  // }
-
   componentDidMount = () => {
-    // this.setState({ isLoading: true }, () => {
       this.fetchToken()
-    // })
   }
 
   render() {
