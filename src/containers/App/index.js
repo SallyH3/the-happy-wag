@@ -83,5 +83,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(App)
 
 App.propTypes = {
   animals: PropTypes.array,
-  setAnimals: PropTypes.func
+  setAnimals: PropTypes.func,
+  boolean: PropTypes.bool,
+  isLoading: PropTypes.func
 }

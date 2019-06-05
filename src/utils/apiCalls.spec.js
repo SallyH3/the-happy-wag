@@ -26,6 +26,21 @@ describe("getAnimals", () => {
   }
 
   })
+
+  it('should be called with the correct params', () => {
+    
+    window.fetch=jest.fn().mockImplementation(() => {
+			return Promise.resolve({
+				ok: true,
+				json: ()=> Promise.resolve(mockResponse)
+			})
+		})
+
+		const expected1 = mockUrl
+		const expected2 = mockOptions
+		getAnimals(mockUrl, mockOptions)
+		expect(window.fetch).toHaveBeenCalledWith(expected1, expected2);
+	})
   
   it("should return a response if status is okay", async () => {
     window.fetch = jest.fn().mockImplementation(() => {
